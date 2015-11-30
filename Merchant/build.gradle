@@ -32,30 +32,37 @@ version = '0.1'
 repositories {
     mavenCentral()
 }
-
 dependencies {
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
-    compile 'javax.servlet:javax.servlet-api:3.1.0'    
-    compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.6.3'
-    compile 'org.springframework.data:spring-data-jpa:1.9.0.RELEASE'
-    compile 'org.hibernate:hibernate-entitymanager:5.0.4.Final'   
+    providedCompile  'javax.servlet:javax.servlet-api:3.1.0'    
+    compile 'com.google.guava:guava:18.0'
+    //compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    //compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-web')   
     compile 'org.projectlombok:lombok:1.16.6'
-    compile 'org.slf4j:slf4j-api:1.7.12'
     compile 'javax.validation:validation-api:1.1.0.Final'
     compile 'org.hibernate:hibernate-validator:5.2.2.Final'
+    compile 'joda-time:joda-time:2.9.1'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-joda:2.6.3'
+    compile 'org.joda:joda-money:0.10.0'
+    compile 'org.joda:joda-convert:1.8.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.4.1'
   	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.4.1'    
-  	compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.thymeleaf:thymeleaf-spring4")
-    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+  	testCompile 'org.springframework.boot:spring-boot-starter-test:1.3.0.RELEASE'  	
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
 
+dependencies {
+	compile 'org.projectlombok:lombok:1.16.6'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("junit:junit")
+}
 eclipse {
   wtp {
     component {
-     	//contextPath='labSpring'
+     	contextPath='merchant'
     }
     facet {
       	facet name: 'java', version: '1.7'

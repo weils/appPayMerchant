@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>77<br>
+
+    金額 <input type="text" name="amount"><br>
+    品項<input type="text" name="item"><br>
+    <input type="hidden" name="clientId">
+
+
+
+<button id="payBtn">Pay via AppPay</button>
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+
+    function startPay(){
+        $.ajax({
+            url: '/Merchant/payApply',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data:{
+                amount:$('[name=amount]').val(),
+                item:$('[name=item]').val(),
+                clientId:$('[name=clientId]').val()
+            }
+
+        }).done(function(rtn){
+            alert(rtn);
+
+        }).fail(function(a,b,c){
+            alert(b);
+        });
+    }
+
+    $(function(){
+        $('#payBtn').click(startPay);
+    });
+
+
+</script>
+</html>
