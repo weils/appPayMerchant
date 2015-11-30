@@ -7,7 +7,7 @@ public interface PaymentGatewayService {
 	public String getLoginLinkInfoForPayment(LoginInfoArgDO arg);
 	
 	
-	public TranscationResult queryTransactionResult();
+	public TranscationResultDO queryTransactionResult();
 	
 	
 	

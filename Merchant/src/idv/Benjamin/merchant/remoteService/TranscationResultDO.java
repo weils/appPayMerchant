@@ -1,5 +1,5 @@
 package idv.Benjamin.merchant.remoteService;
 
-public class TranscationResult {
+public class TranscationResultDO {
 
 }
